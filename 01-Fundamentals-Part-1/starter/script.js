@@ -96,5 +96,25 @@ console.log(x , y);
 
 const averageAge = ageOfRaja + ageOfSarah / 2;//division has highest precedence than addition/subtraction
 
+//strings and template literals
+let firstName= 'Raja';
+let job = 'Teacher';
+
+const raja = "I am "+firstName+' a '+ ageOfRaja + ' years young '+ job +'!';
+console.log(raja);
+
+const rajaNew = `I am ${firstName} a ${ageOfRaja} years young ${job}!`;
+console.log(rajaNew);
+
+console.log(`Just a regular string`);
+console.log('String with \n\
+multiple\n\
+lines');
+
+console.log(`String with
+multiple
+lines`);
+
+
 
 
