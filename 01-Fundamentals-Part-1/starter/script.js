@@ -51,6 +51,7 @@ console.log(typeof year);//number
 console.log(typeof null);//object
 */
 
+/*
 //MathOperators
 const now = 2022;
 const ageOfRaja = now-1991;
@@ -78,4 +79,22 @@ console.log(ageOfSarah>=18);//false
 const isFullAge = ageOfSarah>=18;
 
 console.log(now-1991 > now -2018);
+*/
+
+//Order of precedence
+
+/*reference for order of precedence 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence */
+
+const now = 2022;
+const ageOfRaja = now-1991;
+const ageOfSarah = now-2018;
+
+let x,y;
+x=y= 25-10-5;//for assignment operators Associativity is "right to left"
+console.log(x , y);
+
+const averageAge = ageOfRaja + ageOfSarah / 2;//division has highest precedence than addition/subtraction
+
+
 
