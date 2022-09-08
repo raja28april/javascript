@@ -86,7 +86,7 @@ console.log(now-1991 > now -2018);
 /*reference for order of precedence 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence */
 
-const now = 2022;
+/*const now = 2022;
 const ageOfRaja = now-1991;
 const ageOfSarah = now-2018;
 
@@ -113,7 +113,20 @@ lines');
 
 console.log(`String with
 multiple
-lines`);
+lines`);*/
+
+//decision making statements
+const age =16;
+const isOldEnough = age>=18;
+if(isOldEnough){
+    console.log('Raja can apply for driving license 🚘')
+}
+if(age>18){
+    console.log('Raja can apply for driving license 🚗')
+}else{
+    const yearsLeft = 18-age;
+    console.log(`Raja is too young. Wait for another ${yearsLeft} years 😊`);
+}
 
 
 
