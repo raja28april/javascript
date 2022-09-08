@@ -115,6 +115,7 @@ console.log(`String with
 multiple
 lines`);*/
 
+/*
 //decision making statements
 const age =16;
 const isOldEnough = age>=18;
@@ -127,6 +128,37 @@ if(age>18){
     const yearsLeft = 18-age;
     console.log(`Raja is too young. Wait for another ${yearsLeft} years 😊`);
 }
+*/
+
+//Type conversions
+const inputYear = '1991';
+console.log(Number(inputYear),inputYear);//1991 1991(string)
+console.log(inputYear+18);//199118
+console.log(Number(inputYear)+18);//2009
+
+console.log(Number('Raja'));//NaN
+console.log(typeof NaN);//number
+
+console.log(String(23), 23);//23(string) 23
+
+// type coercions
+console.log('I am '+ 23 + ' years young')//I am 23 years young {'+' operator converts numbers to string}
+console.log('23'-'10'-3)//10{'-' operator converts strings to numbers}
+console.log('23'+'10'+3)//23103{'+' operator converts numbers to string}
+console.log('23'*'3')//69 {'*' operator converts strings to numbers}
+console.log('24'/'3')//8 {'/' operator converts strings to numbers}
+
+
+console.log(2+3+4+'5');//95
+console.log('10'+'4'+'3'-2+'5');//10415
+console.log('10'-'4'-'3'-2+'5');//15
+
+
+
+
+
+
+
 
 
 
