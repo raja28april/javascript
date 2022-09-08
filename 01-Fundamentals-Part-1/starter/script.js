@@ -1,26 +1,30 @@
-// let js ='amazing'
-// if(js==='amazing') alert('Javascript is FUN!')
-// console.log(21+33)
+/*
+let js ='amazing'
+if(js==='amazing') alert('Javascript is FUN!')
+console.log(21+33)
 
 
-// let firstName = 'Raja';
-// console.log(firstName)
+let firstName = 'Raja';
+console.log(firstName)
 
-// //variable name convention
-// let raja_ramasamy = 'RR';
-// let $function = 27;
-// let person = 'Raja';
+//variable name convention
+let raja_ramasamy = 'RR';
+let $function = 27;
+let person = 'Raja';
 
-// let pi = 3.14;
-// let PI = 3.1415;
+let pi = 3.14;
+let PI = 3.1415;
 
-// let myFirstJob = 'teacher';
-// let myCurrentJob = 'coder';
+let myFirstJob = 'teacher';
+let myCurrentJob = 'coder';
 
-// let job1 = 'Teacher';
-// let job2 = 'Coder';
+let job1 = 'Teacher';
+let job2 = 'Coder';
 
-// console.log(myFirstJob);
+console.log(myFirstJob);
+*/
+
+/*
 
 //Datatypes
 
@@ -45,3 +49,33 @@ year = 1991;
 console.log(typeof year);//number
 
 console.log(typeof null);//object
+*/
+
+//MathOperators
+const now = 2022;
+const ageOfRaja = now-1991;
+const ageOfSarah = now-2018;
+
+console.log(ageOfRaja, ageOfSarah);
+
+console.log(ageOfRaja*2, ageOfRaja/10, 2**3);
+
+//AssignmentOperators
+let x = 10 + 5;
+x+=10;//x=x+10//x=15+10;
+console.log(x);
+x*=4;//x=x*4//x=25*4
+x++;//101
+x--;
+x--;//99
+console.log(x);
+
+
+//Comparison Operators
+console.log(ageOfRaja>ageOfSarah);//true//<, >, <=, >=
+console.log(ageOfSarah>=18);//false
+
+const isFullAge = ageOfSarah>=18;
+
+console.log(now-1991 > now -2018);
+
