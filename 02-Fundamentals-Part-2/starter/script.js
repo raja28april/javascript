@@ -302,6 +302,7 @@ for(let i=0; i<raja.length;i++){
 }
 
 */
+/*
 const friends = ['Michael','Steven','Peter'];
 const firstName = 'Raja';
 const raja = [firstName,'Berlin',2035-1991,'Teacher',friends];
@@ -316,4 +317,11 @@ for(let exercise =1; exercise<4; exercise++){
     for(let rep=1; rep<6; rep++){
         console.log(`Exercise:${exercise} - Lifting weight repetition ${rep}🏋️‍♀️`);
     }
+}
+*/
+let dice = Math.trunc(Math.random()*6)+1;
+console.log(dice);
+while(dice!==6){
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random()*6)+1;
 }
