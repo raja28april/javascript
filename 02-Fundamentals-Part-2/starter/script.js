@@ -79,6 +79,7 @@ function fruitProcessor2(apples,oranges){
 
 console.log(fruitProcessor2(2,3));
 */
+/*
 //calling functions inside another function part 2
 const calcAge = function(birthYear){
     return 2035 - birthYear;
@@ -98,6 +99,8 @@ const yearsUntilRetirement = function(birthYear,firstName){
 
 yearsUntilRetirement(1960,'Raja');
 
+*/
+
 /**
  * there are 2 types of functions
  * 1. Function declarations - can be used before it is declared
@@ -111,3 +114,46 @@ yearsUntilRetirement(1960,'Raja');
  * 4. return statement(output a value from the function and terminate execution)
  * 5. const age = calcAge(1995,'Raja') => calling, running or invoking a function using ()
  */
+
+
+//Arrays - first data structure
+ const friend1 = 'Michael';
+ const friend2 = 'Steven';
+ const friend3 = 'Peter';
+
+ const friends = ['Michael','Steven','Peter'];
+ console.log(friends);
+
+ const yrs = new Array(1991,1984,2008,2020);
+
+ console.log(friends[0]);
+ console.log(friends[1]);
+
+ console.log(friends.length);
+ console.log(friends[friends.length-1]);
+
+friends[2] = 'Jay';
+console.log(friends);
+
+const firstName = 'Raja';
+const raja = [firstName,'Berlin',2035-1991,'Teacher',friends];
+console.log(raja);
+console.log(raja.length);
+
+const calcAge = function(birthYear){
+    return 2035 - birthYear;
+}
+
+const years = [1990,1991,1985,2020];
+console.log(calcAge(years));//NaN since calcAge is expecting only one single number and we are passing an array which is an object
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length-1]);
+console.log(age1,age2,age3);
+
+const ages = [calcAge(years[0]),calcAge(years[1]),calcAge(years[years.length-1])];
+console.log(ages);
+
+
+
