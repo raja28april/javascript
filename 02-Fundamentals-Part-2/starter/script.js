@@ -227,7 +227,7 @@ console.log(raja);
 
 console.log(`${raja.firstName} has ${raja.friends.length} friends and his best friend is ${raja.friends[0]}`);// dot operator follows the order of precedence with "left to right" associativity. reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 */
-
+/*
 //Object methods
 
 const friends = ['Michael','Steven','Peter'];
@@ -259,4 +259,9 @@ console.log(raja.calcAge());
 console.log(raja['calcAge']());
 //challenge
 console.log(raja.summary());
+*/
 
+//Iteration or Loops
+for(let i=1; i<=10; i++){
+    console.log(`Lifting weights repetition ${i} 🏋️‍♀️`)
+}
