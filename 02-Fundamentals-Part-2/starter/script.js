@@ -260,8 +260,43 @@ console.log(raja['calcAge']());
 //challenge
 console.log(raja.summary());
 */
-
+/*
 //Iteration or Loops
 for(let i=1; i<=10; i++){
     console.log(`Lifting weights repetition ${i} 🏋️‍♀️`)
+}
+*/
+
+const friends = ['Michael','Steven','Peter'];
+const firstName = 'Raja';
+const raja = [firstName,'Berlin',2035-1991,'Teacher',friends];
+
+const types =[];
+for(let i=0; i<raja.length;i++){
+    //reading from raja array
+    console.log(raja[i], typeof raja[i])
+    //filling data to types array
+    types[i] = typeof raja[i];
+}
+console.log(types);
+
+const years = [1991,2002,2020,1999];
+const ages =[];
+for(let i=0; i<years.length;i++){
+    ages.push(2025-years[i]);
+}
+
+console.log(ages);
+
+//continue and break
+console.log('--- ONLY STRINGS ---');
+for(let i=0; i<raja.length;i++){
+    if(typeof raja[i]!=='string') continue;
+    console.log(raja[i], typeof raja[i]);
+}
+
+console.log('--- BREAK MIT NUMBERS ---');
+for(let i=0; i<raja.length;i++){
+    if(typeof raja[i]==='number') break;
+    console.log(raja[i], typeof raja[i]);
 }
