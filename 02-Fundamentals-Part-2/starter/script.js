@@ -115,7 +115,7 @@ yearsUntilRetirement(1960,'Raja');
  * 5. const age = calcAge(1995,'Raja') => calling, running or invoking a function using ()
  */
 
-
+/*
 //Arrays - first data structure
  const friend1 = 'Michael';
  const friend2 = 'Steven';
@@ -154,6 +154,42 @@ console.log(age1,age2,age3);
 
 const ages = [calcAge(years[0]),calcAge(years[1]),calcAge(years[years.length-1])];
 console.log(ages);
+*/
 
+//Arrays basic operations
+const friends = ['Michael','Steven','Peter'];
+console.log(friends);
+//Add element
+const newLength = friends.push('Jay');//push returns new length of the array
+console.log(friends);
+console.log(newLength);
+
+friends.unshift('John')//adds to first element
+console.log(friends);
+
+//Remove element
+friends.pop();
+const popped = friends.pop();
+console.log(friends);
+console.log(popped);
+console.log(friends);
+
+friends.shift();//removes first element
+console.log(friends);
+
+//index
+console.log(friends.indexOf('Steven'));
+console.log(friends.indexOf('Bob'));//returns -1 if not found
+//includes
+friends.push(23)
+console.log(friends);
+console.log(friends.includes('Steven'));//true
+console.log(friends.includes('Bob'));//returns false if not found
+console.log(friends.includes('23'));//false
+console.log(friends.includes(23));//true
+
+if(friends.includes('Michael')){
+    console.log('You have a friend called Michael')
+}
 
 
