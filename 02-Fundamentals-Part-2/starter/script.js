@@ -266,7 +266,7 @@ for(let i=1; i<=10; i++){
     console.log(`Lifting weights repetition ${i} 🏋️‍♀️`)
 }
 */
-
+/*
 const friends = ['Michael','Steven','Peter'];
 const firstName = 'Raja';
 const raja = [firstName,'Berlin',2035-1991,'Teacher',friends];
@@ -299,4 +299,21 @@ console.log('--- BREAK MIT NUMBERS ---');
 for(let i=0; i<raja.length;i++){
     if(typeof raja[i]==='number') break;
     console.log(raja[i], typeof raja[i]);
+}
+
+*/
+const friends = ['Michael','Steven','Peter'];
+const firstName = 'Raja';
+const raja = [firstName,'Berlin',2035-1991,'Teacher',friends];
+//Looping backwards
+for(let i =raja.length-1; i>=0;i--){
+    console.log(raja[i]);
+}
+
+//Loop inside loop
+for(let exercise =1; exercise<4; exercise++){
+    console.log(`--------Staritng exercise ${exercise}`);
+    for(let rep=1; rep<6; rep++){
+        console.log(`Exercise:${exercise} - Lifting weight repetition ${rep}🏋️‍♀️`);
+    }
 }
