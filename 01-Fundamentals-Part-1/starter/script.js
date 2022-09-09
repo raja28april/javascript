@@ -205,20 +205,34 @@ if(age2!==18){//strictly not equal to 18 because age2 is '18'(string) not a (num
 
 */
 const age = 16;
-const a = age>=20;//false
-const b = age<30;//true
+const a = age >= 20;//false
+const b = age < 30;//true
 
 console.log(!a);//true
-console.log(a&&b);//false
-console.log(a||b);//true
-console.log(!a&&b);//true
-console.log(a||!b);//false
+console.log(a && b);//false
+console.log(a || b);//true
+console.log(!a && b);//true
+console.log(a || !b);//false
 
+const hasDrivingLicense = true;
+const hasGoodVision = true;
 
+console.log(hasDrivingLicense && hasGoodVision)//true
+console.log(hasDrivingLicense || hasGoodVision)//true
+console.log(!hasDrivingLicense)//false
 
+if(hasDrivingLicense && hasGoodVision){
+    console.log('Raja should be able to drive!')
+}else{
+    console.log('Someone else should drive')
+}
 
+const isTired = true;
+console.log(hasDrivingLicense && hasGoodVision && isTired);//true
 
-
+if(hasDrivingLicense && hasGoodVision && !isTired){
+    console.log('Raja should be able to drive');
+}
 
 
 
