@@ -97,3 +97,17 @@ const yearsUntilRetirement = function(birthYear,firstName){
 }
 
 yearsUntilRetirement(1960,'Raja');
+
+/**
+ * there are 2 types of functions
+ * 1. Function declarations - can be used before it is declared
+ * 2. Function expressions - essentially a function value stored in a variable
+ * 3. Arrow functions - Great for quick one line function. Has no 'this' keyword
+ * 
+ * normally the anatomy of the function has 
+ * 1. function name
+ * 2. parameters(input data)
+ * 3. function body(block of code that we want to reuse. It processes the input data)
+ * 4. return statement(output a value from the function and terminate execution)
+ * 5. const age = calcAge(1995,'Raja') => calling, running or invoking a function using ()
+ */
