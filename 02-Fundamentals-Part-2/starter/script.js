@@ -193,6 +193,7 @@ if(friends.includes('Michael')){
 }
 */
 
+/*
 //Introduction to objects
 const friends = ['Michael','Steven','Peter'];
 const raja ={
@@ -225,3 +226,37 @@ raja['twitter'] = '@raja28';
 console.log(raja);
 
 console.log(`${raja.firstName} has ${raja.friends.length} friends and his best friend is ${raja.friends[0]}`);// dot operator follows the order of precedence with "left to right" associativity. reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+*/
+
+//Object methods
+
+const friends = ['Michael','Steven','Peter'];
+const raja ={
+    firstName: 'Raja',
+    lastName: 'Ramasamy',
+    birthYear: 2002,
+    job: 'teacher',
+    friends: friends,
+    hasDrivingLicense: true,
+    // calcAge: function(birthYear){
+    //     return 2025 - birthYear;
+    // }
+    calcAge: function(){//Functions in a object are called as methods
+        // console.log(this);
+        this.age = 2025 - this.birthYear;
+        return this.age;
+    },
+    summary: function(){//Functions in a object are called as methods
+        return `${this.firstName} is a ${this.age} young kid and he has ${this.hasDrivingLicense?'a':'no'} driving license`;
+    }
+    //Functions in a object are called as methods - calcAge and summary are methods here
+};
+
+// console.log(raja.calcAge(2000));
+// console.log(raja['calcAge'](2000));//function name inside brackets should be in string format and then pass parameters. Keep in mind about the order of precedence
+
+console.log(raja.calcAge());
+console.log(raja['calcAge']());
+//challenge
+console.log(raja.summary());
+
