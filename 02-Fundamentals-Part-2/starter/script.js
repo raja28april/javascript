@@ -155,7 +155,7 @@ console.log(age1,age2,age3);
 const ages = [calcAge(years[0]),calcAge(years[1]),calcAge(years[years.length-1])];
 console.log(ages);
 */
-
+/*
 //Arrays basic operations
 const friends = ['Michael','Steven','Peter'];
 console.log(friends);
@@ -191,5 +191,16 @@ console.log(friends.includes(23));//true
 if(friends.includes('Michael')){
     console.log('You have a friend called Michael')
 }
+*/
 
+//Introduction to objects
+const friends = ['Michael','Steven','Peter'];
+const raja ={
+    firstName: 'Raja',
+    lastName: 'Ramasamy',
+    birthYear: '2002',
+    job: 'teacher',
+    friends: friends
+}
 
+console.log(raja);
