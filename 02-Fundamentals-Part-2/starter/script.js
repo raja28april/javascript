@@ -198,9 +198,30 @@ const friends = ['Michael','Steven','Peter'];
 const raja ={
     firstName: 'Raja',
     lastName: 'Ramasamy',
-    birthYear: '2002',
+    age: 2022-2002,
     job: 'teacher',
     friends: friends
 }
 
 console.log(raja);
+
+console.log(raja.firstName);//dot operator
+const nameKey = 'Name';
+//console.log(raja.'first'+nameKey);//with dot(.) operator we should use only the real property name and not the computed property name
+console.log(raja['firstName']);//Bracket notation
+console.log(raja['first'+nameKey]);
+console.log(raja['last'+nameKey]);
+
+// const interestIn = prompt('What you want to know about Raja?. Choose between firstName, lastName, age, job and friends');
+
+// if(raja[interestIn]){
+//     console.log(raja[interestIn]);
+// }else{
+//     console.log('Wrong request. Choose between firstName, lastName, age, job and friends')
+// }
+
+raja.location = 'Boston';
+raja['twitter'] = '@raja28';
+console.log(raja);
+
+console.log(`${raja.firstName} has ${raja.friends.length} friends and his best friend is ${raja.friends[0]}`);// dot operator follows the order of precedence with "left to right" associativity. reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
