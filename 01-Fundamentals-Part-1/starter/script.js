@@ -180,6 +180,8 @@ if(height){
     console.log('height is undefined');
 }
 */
+
+/*
 //Equality Operators
 const age = 18;
 if(age===18){
@@ -200,6 +202,17 @@ if(age2==18){
 if(age2!==18){//strictly not equal to 18 because age2 is '18'(string) not a (number)
     console.log('Why not 18?!');
 }
+
+*/
+const age = 16;
+const a = age>=20;//false
+const b = age<30;//true
+
+console.log(!a);//true
+console.log(a&&b);//false
+console.log(a||b);//true
+console.log(!a&&b);//true
+console.log(a||!b);//false
 
 
 
