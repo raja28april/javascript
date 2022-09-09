@@ -10,6 +10,7 @@ if(hasDrivingLicense) console.log('I can drive😎');
 
 const private = 20;//SyntaxError: Unexpected strict mode reserved word when using strict mode*/
 
+/*
 //function
 function logger(){
     console.log('The name is Raja');
@@ -31,3 +32,34 @@ console.log(appleOrangeJuice);
 
 const num = Number('23');
 console.log(num);
+*/
+/*
+//function declaration vs expressions
+//function declaration
+
+function calcAge1(birthYear){
+    return 2035 - birthYear;
+}
+console.log(calcAge1(2025));
+
+//function expression
+const calcAge2 = function(birthYear){
+    return 2035 - birthYear;
+}
+
+console.log(calcAge2(2025));
+*/
+
+//Arrow functions
+
+const calcAge3 = birthYear => 2035-birthYear;
+console.log(calcAge3(2028));
+
+const yearUntilRetirement = (birthYear,firstName) =>{
+    const age = 2035-birthYear;
+    const retirement = 60-age;
+    return `${firstName} has ${retirement} years for retirement`;
+}
+
+console.log(yearUntilRetirement(1991,'Raja'));
+console.log(yearUntilRetirement(1992,'Raja'));
