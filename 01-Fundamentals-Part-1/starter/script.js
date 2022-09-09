@@ -129,7 +129,7 @@ if(age>18){
     console.log(`Raja is too young. Wait for another ${yearsLeft} years 😊`);
 }
 */
-
+/*
 //Type conversions
 const inputYear = '1991';
 console.log(Number(inputYear),inputYear);//1991 1991(string)
@@ -152,7 +152,32 @@ console.log('24'/'3')//8 {'/' operator converts strings to numbers}
 console.log(2+3+4+'5');//95
 console.log('10'+'4'+'3'-2+'5');//10415
 console.log('10'-'4'-'3'-2+'5');//15
+*/
 
+//Truthy and falsy vlaues
+// 5 falsy values are 0, '', undefined, null, NaN
+
+console.log(Boolean(0));//false
+console.log(Boolean(''));//false
+console.log(Boolean(undefined));//false
+console.log(Boolean(null));//false
+console.log(Boolean(NaN));//false
+console.log(Boolean('Raja'));//true
+
+
+const money =0;
+if(money){
+    console.log(`Don't spend it all`);
+}else{
+    console.log('You should find a job');
+}
+
+let height;
+if(height){
+    console.log('height is defined');
+}else{
+    console.log('height is undefined');
+}
 
 
 
