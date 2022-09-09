@@ -235,6 +235,7 @@ if(hasDrivingLicense && hasGoodVision && !isTired){
     console.log('Raja should be able to drive');
 }
 */
+/*
 //switch statement
 const day = 'monday';
 switch (day) {
@@ -260,3 +261,7 @@ switch (day) {
         console.log('Not a valid day!')
         break;
 }
+*/
+//expressions produces values and statement are like full sentences
+const me = 'Raja';
+console.log(`I'm ${2022-1991} years young ${me}`);
