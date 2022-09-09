@@ -262,6 +262,12 @@ switch (day) {
         break;
 }
 */
+/*
 //expressions produces values and statement are like full sentences
 const me = 'Raja';
 console.log(`I'm ${2022-1991} years young ${me}`);
+*/
+//Ternary operator
+const age = 21;
+const drink = age>=18?'wine 🍷':'water 💧';
+console.log(drink);
