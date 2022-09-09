@@ -204,6 +204,7 @@ if(age2!==18){//strictly not equal to 18 because age2 is '18'(string) not a (num
 }
 
 */
+/*
 const age = 16;
 const a = age >= 20;//false
 const b = age < 30;//true
@@ -233,7 +234,29 @@ console.log(hasDrivingLicense && hasGoodVision && isTired);//true
 if(hasDrivingLicense && hasGoodVision && !isTired){
     console.log('Raja should be able to drive');
 }
-
-
-
-
+*/
+//switch statement
+const day = 'monday';
+switch (day) {
+    case 'monday':
+        console.log('Plan course structure');
+        console.log('Go to coding meetup');
+        break;
+    case 'tuesday':
+        console.log('Prepare theory videos');
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log('Write coding examples');
+        break;
+    case 'friday':
+        console.log('Record videos');
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log('Enjoy wohnends');
+        break;
+    default:
+        console.log('Not a valid day!')
+        break;
+}
