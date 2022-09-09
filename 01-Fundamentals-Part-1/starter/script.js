@@ -154,6 +154,7 @@ console.log('10'+'4'+'3'-2+'5');//10415
 console.log('10'-'4'-'3'-2+'5');//15
 */
 
+/*
 //Truthy and falsy vlaues
 // 5 falsy values are 0, '', undefined, null, NaN
 
@@ -177,6 +178,27 @@ if(height){
     console.log('height is defined');
 }else{
     console.log('height is undefined');
+}
+*/
+//Equality Operators
+const age = 18;
+if(age===18){
+    console.log('You just became an adult! (strict)')
+}
+if(age==18){
+    console.log('You just became an adult! (loose)')
+}
+
+const age2 = '18';
+if(age2===18){
+    console.log('You just became an adult! (strict)')
+}
+if(age2==18){
+    console.log('You just became an adult! (loose)')
+}
+
+if(age2!==18){//strictly not equal to 18 because age2 is '18'(string) not a (number)
+    console.log('Why not 18?!');
 }
 
 
