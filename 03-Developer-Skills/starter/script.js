@@ -59,7 +59,7 @@ const measureKelvin = function () {
   
       // C) FIX
       // value: Number(prompt('Degrees celsius:')),
-      value: prompt('Degrees celsius:'),
+      value: Number(prompt('Degrees celsius:')),
     };
   
     // B) FIND
