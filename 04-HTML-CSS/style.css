@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(243, 243, 212);
+    font-family: Arial;
+    font-size: 20px;
+}
+
+h1{
+    font-size: 48px;
+}
+.linkedln-Details{
+    color: red;
+}
+
+#your-name{
+    background-color: rgb(241, 187, 85);
+    border: 5px solid rgb(245, 138, 6);
+}
