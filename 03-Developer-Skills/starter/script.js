@@ -49,7 +49,7 @@ calcTempAmplitude(temperatures);
 calcTempAmplitude(['error',25,'8',4],temperatures);
 
 */
-
+/*
 ///////////////////////////////////////
 // Debugging with the Console and Breakpoints
 const measureKelvin = function () {
@@ -59,7 +59,7 @@ const measureKelvin = function () {
   
       // C) FIX
       // value: Number(prompt('Degrees celsius:')),
-      value: Number(prompt('Degrees celsius:')),
+      value: 10,
     };
   
     // B) FIND
@@ -74,3 +74,45 @@ const measureKelvin = function () {
   };
   // A) IDENTIFY
   console.log(measureKelvin());
+*/
+
+  ///////////////////////////////////////
+// Coding Challenge #1
+
+/*
+Given an array of forecasted maximum temperatures, the thermometer displays a string with these temperatures.
+
+Example: [17, 21, 23] will print "... 17ºC in 1 days ... 21ºC in 2 days ... 23ºC in 3 days ..."
+
+Create a function 'printForecast' which takes in an array 'arr' and logs a string like the above to the console.
+
+Use the problem-solving framework: Understand the problem and break it up into sub-problems!
+
+TEST DATA 1: [17, 21, 23]
+TEST DATA 2: [12, 5, -5, 0, 4]
+*/
+/**
+ * Questions:
+ * 1. What is the total number of days?
+ * 
+ * Divide and conquer:
+ * 1. Transform each array element into string
+ * 2. Transform each array element into string with ºC
+ * 3. String needs to contain days(index+1)
+ * 4. Add ... between elements and start and end of the string
+ */
+
+const data1 =[17, 21, 23];
+const data2 =[12, 5, -5, 0, 4];
+
+const printForecast = function(data){
+    let str = '...';
+    for(let i =0;i<data.length;i++){
+        str = `${str} ${data[i]}ºC in ${i+1} days ...`;
+    }
+    console.log(str);
+}
+printForecast(data1);
+printForecast(data2);
+
+
