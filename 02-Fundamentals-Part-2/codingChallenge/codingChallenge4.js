@@ -55,3 +55,4 @@ const calcAverage = (arr=[])=>{
 }
 
 console.log(`Average total bill is ${calcAverage(total)}`);
+console.log(calcAverage);
