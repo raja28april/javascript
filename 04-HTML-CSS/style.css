@@ -1,11 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     background-color: rgb(243, 243, 212);
     font-family: Arial;
     font-size: 20px;
+    padding: 50px;
 }
 
 h1{
     font-size: 48px;
+    margin-bottom: 25px;
+}
+h2{
+    margin-bottom: 20px;
+    text-align: center;
 }
 .linkedln-Details{
     color: red;
@@ -14,4 +25,25 @@ h1{
 #your-name{
     background-color: rgb(241, 187, 85);
     border: 5px solid rgb(245, 138, 6);
+    width: 400px;
+    padding: 25px;
+    margin-top: 30px;
+}
+p{
+    margin-bottom: 20px;
+}
+
+input,button{
+    padding: 10px;
+    font-size: 16px;
+}
+a{
+    background-color: green;
+}
+#your-name h2{
+    color: olivedrab;
+}
+#raja-pic{
+    width: 300px;
+    height: 150px;
 }
