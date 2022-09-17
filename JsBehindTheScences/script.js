@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 ///////////////////////////////////////
 // Scoping in Practice
 
@@ -37,11 +37,11 @@ function calcAge(birthYear) {
 }
 
 const firstName = 'Jonas';
-calcAge(1991);
+calcAge(1991);*/
 // console.log(age);
 // printAge();
 
-
+/*
 ///////////////////////////////////////
 // Hoisting and TDZ in Practice
 
@@ -88,7 +88,9 @@ console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
 
+*/
 
+/*
 ///////////////////////////////////////
 // The this Keyword in Practice
 console.log(this);
@@ -123,11 +125,14 @@ matilda.calcAge();
 
 const f = jonas.calcAge;
 f();
+*/
 
+/*
 
 ///////////////////////////////////////
 // Regular Functions vs. Arrow Functions
 // var firstName = 'Matilda';
+
 
 const jonas = {
   firstName: 'Jonas',
@@ -135,14 +140,18 @@ const jonas = {
   calcAge: function () {
     // console.log(this);
     console.log(2037 - this.year);
-
+// /**
+//  * NOTE1: 'this' keyword inside a function is always equal to 'undefined'
+//  * 
     // Solution 1
     // const self = this; // self or that
     // const isMillenial = function () {
     //   console.log(self);
     //   console.log(self.year >= 1981 && self.year <= 1996);
     // };
-
+// /**
+//  * NOTE2: 'this' keyword in arrow functions will point to the parent object, the mother object in javascript is 'window'
+//  *
     // Solution 2
     const isMillenial = () => {
       console.log(this);
@@ -158,3 +167,60 @@ const jonas = {
 };
 jonas.greet();
 jonas.calcAge();
+*/
+
+///////////////////////////////////////
+// Objects vs. primitives
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'Jonas',
+  age: 30,
+};
+const friend = me;
+friend.age = 27;
+console.log('Friend:', friend);
+console.log('Me', me);
+
+
+///////////////////////////////////////
+// Primitives vs. Objects in Practice
+
+// Primitive types
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+// Reference types
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('Before marriage:', jessica);
+console.log('After marriage: ', marriedJessica);
+// marriedJessica = {};
+
+// Copying objects
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+
+console.log('Before marriage:', jessica2);
+console.log('After marriage: ', jessicaCopy);
