@@ -6,25 +6,43 @@ const restaurant = {
     starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
     mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-    openingHours = {
+    openingHours: {
         thu: {
-          open: 12,
-          close: 22,
+            open: 12,
+            close: 22,
         },
         fri: {
-          open: 11,
-          close: 23,
+            open: 11,
+            close: 23,
         },
         sat: {
-          open: 0, // Open 24 hours
-          close: 24,
+            open: 0, // Open 24 hours
+            close: 24,
         },
     },
-    order: function(starter,main){
-        return [this.starterMenu[starter],this.mainMenu[main]];
+    order: function (starter, main) {
+        return [this.starterMenu[starter], this.mainMenu[main]];
+    },
+
+    //Destructuring of objects with defaults too
+    orderDelivery:function({starterIndex=0,mainIndex=1,time='23:20',address}){
+        console.log(`Order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
     }
 }
+restaurant.orderDelivery({
+    time:'22:30',
+    address:'21 fechner',
+    mainIndex:2,
+    starterIndex:2
+});
 
+restaurant.orderDelivery({
+    address:'21 fechner',
+    starterIndex:2
+});
+////////////////////////////////////////////
+//Destructing of arrays
+/*
 const arr = [2,3,4];
 const a = arr[0];
 const b = arr[1];
@@ -67,4 +85,27 @@ const values = [1,3,4];
 
 const[r,s=5,t=2,u=1] = values;
 console.log(r,s,t,u);
+*/
+
+//////////////////////////////////////////////
+//Destructing of Objects
+const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
+
+const { name: restaurantName, openingHours: hours, categories: tag } = restaurant;
+// console.log(restaurantName,hours,tag);
+
+//DEFAULT VALUES
+const {menu=[],starterMenu:starter=[]} = restaurant;
+// console.log(menu,starter);
+
+//MUTATING VARIABLES
+let a = 111, b =999;
+const obj = {a:23,b:7, c:9};
+({a,b} = obj);
+// console.log(a,b);
+
+//NESTED OBJECTS
+const{fri:{open:o,close:c}}=openingHours;
+console.log(o,c);
 
