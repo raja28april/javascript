@@ -30,19 +30,107 @@ const restaurant = {
     },
     orderPasta: function(ing1,ing2,ing3){
         console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
+    },
+    orderPizza:function(mainIngredient,...otherIngredients){
+        console.log(mainIngredient);
+        console.log(otherIngredients);
     }
 }
-restaurant.orderDelivery({
-    time:'22:30',
-    address:'21 fechner',
-    mainIndex:2,
-    starterIndex:2
-});
 
-restaurant.orderDelivery({
-    address:'21 fechner',
-    starterIndex:2
-});
+///////////////REST PATTERN & PARAMETERS/////////////////////
+// 1) Destructuring
+//SPREAD, because on RIGHT SIDE of = 
+const arr = [1,2,...[3,4]];
+
+//REST, because on LEFT SIDE of =
+const [a,b,...others]=[1,2,3,4,5]
+console.log(a,b,others);
+
+const [pizza,,risotto,...otherFood] = [...restaurant.mainMenu,...restaurant.starterMenu];
+console.log(pizza,risotto,otherFood);
+
+//Objects
+const{sat,...weekdays} = restaurant.openingHours;
+console.log(weekdays);
+
+// 2) Functions
+
+const add = function(...numbers){
+    let sum = 0;
+    for(let i=0;i<numbers.length;i++) sum+=numbers[i];
+    console.log(`sum = ${sum}`);
+}
+
+add(2,3);
+add(2,3,4);
+add(2,3,4,5,6);
+
+const x = [10,11,12];
+add(...x);
+
+restaurant.orderPizza('mushrooms','onions','olives','spinach');
+restaurant.orderPizza('mushroom');
+
+// restaurant.orderDelivery({
+//     time:'22:30',
+//     address:'21 fechner',
+//     mainIndex:2,
+//     starterIndex:2
+// });
+
+// restaurant.orderDelivery({
+//     address:'21 fechner',
+//     starterIndex:2
+// });
+
+/////////////////Spread Operator/////////////
+//
+/*
+const arr = [7,8,9];
+const badNewArr = [1,2,arr[0],arr[1],arr[2]];
+console.log(badNewArr);
+
+const newArr = [1,2,...arr];
+console.log(newArr);
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu,'Gnocci'];
+console.log(newMenu);
+
+//copy Array
+const mainMenuCopy = [...restaurant.mainMenu];//shallow copy
+mainMenuCopy.push('Idly');
+console.log(mainMenuCopy);
+console.log(restaurant.mainMenu);
+
+//join 2 Arrays
+const menu = [...restaurant.mainMenu,...restaurant.starterMenu];
+console.log(menu);
+
+//Iteratables: Arrays ,strings, maps , sets but NOT Objects
+const str = 'Raja';
+const letters = [...str,"", ".R"];
+console.log(letters);
+
+// console.log(`${...str} Raja`);//Unexpected token '...'
+
+// Real-world example
+const ingredients = [
+    // prompt("Let's make pasta! Ingredient 1?"),
+    // prompt('Ingredient 2?'),
+    // prompt('Ingredient 3'),
+  ];
+  restaurant.orderPasta(...ingredients);
+  console.log(ingredients);
+
+//   spread operator on Objects
+const newRestaurant = {foundedIn:1998,...restaurant,founder:'Raja'};
+const newRestaurantCopy = {...newRestaurant};
+newRestaurant.founder = 'Raja2';
+console.log(newRestaurant.founder);
+console.log(newRestaurantCopy.founder);
+*/
+
 //////////////Destructing of arrays///////////////
 //
 /*
@@ -113,51 +201,5 @@ const obj = {a:23,b:7, c:9};
 const{fri:{open:o,close:c}}=openingHours;
 console.log(o,c);
 */
-
-/////////////////Spread Operator/////////////
-//
-const arr = [7,8,9];
-const badNewArr = [1,2,arr[0],arr[1],arr[2]];
-console.log(badNewArr);
-
-const newArr = [1,2,...arr];
-console.log(newArr);
-console.log(...newArr);
-
-const newMenu = [...restaurant.mainMenu,'Gnocci'];
-console.log(newMenu);
-
-//copy Array
-const mainMenuCopy = [...restaurant.mainMenu];//shallow copy
-mainMenuCopy.push('Idly');
-console.log(mainMenuCopy);
-console.log(restaurant.mainMenu);
-
-//join 2 Arrays
-const menu = [...restaurant.mainMenu,...restaurant.starterMenu];
-console.log(menu);
-
-//Iteratables: Arrays ,strings, maps , sets but NOT Objects
-const str = 'Raja';
-const letters = [...str,"", ".R"];
-console.log(letters);
-
-// console.log(`${...str} Raja`);//Unexpected token '...'
-
-// Real-world example
-const ingredients = [
-    // prompt("Let's make pasta! Ingredient 1?"),
-    // prompt('Ingredient 2?'),
-    // prompt('Ingredient 3'),
-  ];
-  restaurant.orderPasta(...ingredients);
-  console.log(ingredients);
-
-//   spread operator on Objects
-const newRestaurant = {foundedIn:1998,...restaurant,founder:'Raja'};
-const newRestaurantCopy = {...newRestaurant};
-newRestaurant.founder = 'Raja2';
-console.log(newRestaurant.founder);
-console.log(newRestaurantCopy.founder);
 
 
