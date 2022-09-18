@@ -37,7 +37,19 @@ const restaurant = {
     }
 }
 
+
+/////////////NULLISH COALESCING OPERATOR ??///////////////////
+
+restaurant.numGuests = 0;
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+//Nullish: null and undefined (NOT 0 and '') only considered as falsy
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+
 /////////////SHORT CIRCUITING (&& AND ||)///////////////////
+/*
 console.log('________OR________');
 //Use any data type, return any data type and short circuiting
 // console.log(3||'Raja');
@@ -66,7 +78,7 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPizza && restaurant.orderPizza('mushroom','spinach');
-
+*/
 
 ///////////////REST PATTERN & PARAMETERS/////////////////////
 /*
