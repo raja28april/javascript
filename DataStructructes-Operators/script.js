@@ -19,6 +19,7 @@ const restaurant = {
           open: 0, // Open 24 hours
           close: 24,
         },
+    },
     order: function(starter,main){
         return [this.starterMenu[starter],this.mainMenu[main]];
     }
