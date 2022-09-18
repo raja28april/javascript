@@ -27,6 +27,9 @@ const restaurant = {
     //Destructuring of objects with defaults too
     orderDelivery:function({starterIndex=0,mainIndex=1,time='23:20',address}){
         console.log(`Order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
+    },
+    orderPasta: function(ing1,ing2,ing3){
+        console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
     }
 }
 restaurant.orderDelivery({
@@ -40,8 +43,8 @@ restaurant.orderDelivery({
     address:'21 fechner',
     starterIndex:2
 });
-////////////////////////////////////////////
-//Destructing of arrays
+//////////////Destructing of arrays///////////////
+//
 /*
 const arr = [2,3,4];
 const a = arr[0];
@@ -87,8 +90,9 @@ const[r,s=5,t=2,u=1] = values;
 console.log(r,s,t,u);
 */
 
-//////////////////////////////////////////////
-//Destructing of Objects
+/////////////Destructing of Objects//////////////////
+///
+/*
 const { name, openingHours, categories } = restaurant;
 // console.log(name, openingHours, categories);
 
@@ -108,4 +112,52 @@ const obj = {a:23,b:7, c:9};
 //NESTED OBJECTS
 const{fri:{open:o,close:c}}=openingHours;
 console.log(o,c);
+*/
+
+/////////////////Spread Operator/////////////
+//
+const arr = [7,8,9];
+const badNewArr = [1,2,arr[0],arr[1],arr[2]];
+console.log(badNewArr);
+
+const newArr = [1,2,...arr];
+console.log(newArr);
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu,'Gnocci'];
+console.log(newMenu);
+
+//copy Array
+const mainMenuCopy = [...restaurant.mainMenu];//shallow copy
+mainMenuCopy.push('Idly');
+console.log(mainMenuCopy);
+console.log(restaurant.mainMenu);
+
+//join 2 Arrays
+const menu = [...restaurant.mainMenu,...restaurant.starterMenu];
+console.log(menu);
+
+//Iteratables: Arrays ,strings, maps , sets but NOT Objects
+const str = 'Raja';
+const letters = [...str,"", ".R"];
+console.log(letters);
+
+// console.log(`${...str} Raja`);//Unexpected token '...'
+
+// Real-world example
+const ingredients = [
+    // prompt("Let's make pasta! Ingredient 1?"),
+    // prompt('Ingredient 2?'),
+    // prompt('Ingredient 3'),
+  ];
+  restaurant.orderPasta(...ingredients);
+  console.log(ingredients);
+
+//   spread operator on Objects
+const newRestaurant = {foundedIn:1998,...restaurant,founder:'Raja'};
+const newRestaurantCopy = {...newRestaurant};
+newRestaurant.founder = 'Raja2';
+console.log(newRestaurant.founder);
+console.log(newRestaurantCopy.founder);
+
 
