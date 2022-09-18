@@ -38,15 +38,47 @@ const restaurant = {
 }
 
 
-/////////////NULLISH COALESCING OPERATOR ??///////////////////
+///////////////////////////////////////
+// Logical Assignment Operators
+const rest1 = {
+    name: 'Capri',
+    // numGuests: 20,
+    numGuests: 0,
+  };
+  
+  const rest2 = {
+    name: 'La Piazza',
+    owner: 'Giovanni Rossi',
+  };
+//OR assignment operator
+//   rest1.numGuests = rest1.numGuests || 10;
+//   rest2.numGuests = rest2.numGuests || 10;
 
+// rest1.numGuests||=10;
+// rest2.numGuests||=10;
+
+//Nullish assignment Operator
+rest1.numGuests??=10;
+rest2.numGuests??=10;
+
+//And Operator
+// rest1.owner = rest1.owner && '<Anonymous';
+// rest2.owner = rest2.owner && '<Anonymous';
+
+rest1.owner &&= '<Anonymous';
+rest2.owner &&= '<Anonymous';
+console.log(rest1);
+console.log(rest2);
+
+/////////////NULLISH COALESCING OPERATOR ??///////////////////
+/*
 restaurant.numGuests = 0;
 const guests2 = restaurant.numGuests || 10;
 console.log(guests2);
 //Nullish: null and undefined (NOT 0 and '') only considered as falsy
 const guestCorrect = restaurant.numGuests ?? 10;
 console.log(guestCorrect);
-
+*/
 
 /////////////SHORT CIRCUITING (&& AND ||)///////////////////
 /*
