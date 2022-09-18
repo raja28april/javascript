@@ -25,21 +25,53 @@ const restaurant = {
     },
 
     //Destructuring of objects with defaults too
-    orderDelivery:function({starterIndex=0,mainIndex=1,time='23:20',address}){
+    orderDelivery: function ({ starterIndex = 0, mainIndex = 1, time = '23:20', address }) {
         console.log(`Order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
     },
-    orderPasta: function(ing1,ing2,ing3){
+    orderPasta: function (ing1, ing2, ing3) {
         console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
     },
-    orderPizza:function(mainIngredient,...otherIngredients){
+    orderPizza: function (mainIngredient, ...otherIngredients) {
         console.log(mainIngredient);
         console.log(otherIngredients);
     }
 }
 
+/////////////SHORT CIRCUITING (&& AND ||)///////////////////
+console.log('________OR________');
+//Use any data type, return any data type and short circuiting
+// console.log(3||'Raja');
+// console.log(''||'Raja');
+// console.log(true||0);
+// console.log(undefined||null);
+// console.log(true||true);
+
+// console.log(undefined||''||0||'Hello'||23||null);
+
+// restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log('________AND________');
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+console.log(7 && 0);
+console.log('Hello' && 23 && null && 'Jonas');
+
+//Practical example
+if (restaurant.orderPizza) {
+    restaurant.orderPizza('mushroom', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushroom','spinach');
+
+
 ///////////////REST PATTERN & PARAMETERS/////////////////////
+/*
 // 1) Destructuring
-//SPREAD, because on RIGHT SIDE of = 
+//SPREAD, because on RIGHT SIDE of =
 const arr = [1,2,...[3,4]];
 
 //REST, because on LEFT SIDE of =
@@ -82,7 +114,7 @@ restaurant.orderPizza('mushroom');
 //     address:'21 fechner',
 //     starterIndex:2
 // });
-
+*/
 /////////////////Spread Operator/////////////
 //
 /*
@@ -153,7 +185,7 @@ console.log(main,secondary);
 
 //swap using destructuring arrays
 [main,secondary] = [secondary,main];
-console.log(main,secondary); 
+console.log(main,secondary);
 
 // console.log(restaurant.order(2,0));
 
@@ -169,7 +201,7 @@ const[i,,[j,k]]=nested;
 console.log(i,j,k);
 
 
-//DEFAULT VALUES while destructuring 
+//DEFAULT VALUES while destructuring
 const values = [1,3,4];
 // const[r,s,t,u] = values;
 // console.log(r,s,t,u);//u value will be undefined
