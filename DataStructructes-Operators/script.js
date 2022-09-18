@@ -37,9 +37,22 @@ const restaurant = {
     }
 }
 
+/////////////Looping arrays - 'For of' loop
+const menu = [...restaurant.starterMenu,...restaurant.mainMenu];
+for(const item of menu) console.log(item);
+
+//<for of> loop with index
+for(const item of menu.entries()) console.log(item);
+// console.log(...menu.entries());
+for(const item of menu.entries()) console.log(`${item[0]+1}: ${item[1]}`);
+for(const [i,el] of menu.entries()) console.log(`${i}: ${el}`);//with destructing of arrays 
+
+
+
 
 ///////////////////////////////////////
 // Logical Assignment Operators
+/*
 const rest1 = {
     name: 'Capri',
     // numGuests: 20,
@@ -69,7 +82,7 @@ rest1.owner &&= '<Anonymous';
 rest2.owner &&= '<Anonymous';
 console.log(rest1);
 console.log(rest2);
-
+*/
 /////////////NULLISH COALESCING OPERATOR ??///////////////////
 /*
 restaurant.numGuests = 0;
