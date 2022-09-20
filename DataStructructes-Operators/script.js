@@ -44,6 +44,39 @@ const restaurant = {
     }
 }
 
+////////////////Maps//////////////////////
+
+const rest = new Map();
+rest.set('name','Raja');
+rest.set(1, 'France , Italy');
+console.log(rest.set(2,'Germany , India'));
+
+rest
+.set('categories',['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+.set('open',11)
+.set('close',23)
+.set(true,'We are open 🤩')
+.set(false,'We are closed 😊')
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get('true'));
+console.log(rest.get('1'));
+
+const time = 8;
+console.log(rest.get(time>rest.get('open')&&time<rest.get('close')));
+console.log(rest.has('categories'));
+console.log(rest.delete(2));
+// rest.clear()
+console.log(rest.size);
+const arr = [1,2];
+// rest.set([1,2],true);
+rest.set(arr);
+console.log(rest);
+// console.log(rest.get([1,2]));//will give undefined because both arrays [1,2](get) and [1,2](set) in map  are not the same object in the heap
+
+
+/*
 //////////////Sets///////////////////////
 // 
 const ordersSet = new Set([
@@ -79,7 +112,7 @@ const ordersSet = new Set([
   );
   
   console.log(new Set('Raja').size);
-
+*/
 ///////////////Looping Objects: Object Keys, Values, and Entries///////
 /*
 //Property Names
