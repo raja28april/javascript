@@ -44,6 +44,57 @@ const restaurant = {
     }
 }
 
+//////////////////////Strings/////////////////
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.lastIndexOf('portugal'));//returns -1 when not found because of case sensitivity
+console.log(airline.lastIndexOf('Portugal'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4,7));
+console.log(airline.slice(0,airline.indexOf(' ')));
+console.log(airline.slice(0,airline.lastIndexOf(' ')));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1,-1));
+
+const checkMiddleSeat = function(seat){
+    const s = seat.slice(-1);
+    if(s==='B' || s==='E'){
+        console.log("you got the middle seat");
+    }else{
+        console.log("you got lucky");
+    }
+}
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('5E');
+
+console.log(new String('jonas'));
+console.log(typeof new String('jonas'));
+console.log(typeof new String('jonas').slice(1));
+
+
+
+
+
+
+
+
+
+/*
 ////////////////Maps//////////////////////
 
 const rest = new Map();
@@ -75,6 +126,7 @@ rest.set(arr);
 console.log(rest);
 // console.log(rest.get([1,2]));//will give undefined because both arrays [1,2](get) and [1,2](set) in map  are not the same object in the heap
 
+*/
 
 /*
 //////////////Sets///////////////////////
