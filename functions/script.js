@@ -1,5 +1,6 @@
 'use strict';
 ///////////////////////Default Parameters/////////////
+/*
 const bookings = [];
 const createBooking = function (
     flightNum,
@@ -23,9 +24,9 @@ let a;
 
 if(a) console.log('true')
 else console.log('false');
-
+*/
 ///////////////FunctionsAcceptingCallbackFunctions////////////
-
+/*
 const oneword = function (str) {
     return str.replace(/ /g, '').toLowerCase();
 }
@@ -52,7 +53,20 @@ document.body.addEventListener('click',high5);
 
 
 ['Raja','Martha','Partha'].forEach((high5));
+*/
+////////////Functions returning functions////////////
+const greet = function (greeting) {
+    return function (name) {
+        console.log(`${greeting} ${name}`);
+    }
+}
 
+greet('Hello')('Raja');
 
+//Challenge to write same greet fubc using arrow func
+// const greetArrow = (greeting) => {
+//     return (name) => console.log(`${greeting} ${name}`);
+// }
 
-
+const greetArrow = (greeting) => (name) => console.log(`${greeting} ${name}`);
+greetArrow('Hi')('Raja');
