@@ -1,5 +1,20 @@
 'use strict';
+
+/////////////////Immediately Invoked Function Expression////////////
+
+const runOnce = function(){
+    console.log('This will run never again');
+}
+runOnce();
+
+(function(){
+    console.log('This will run never again - unanonymous func');
+})();
+
+(()=>console.log('This will run never again -arrow func example'))();
+
 /////////////Call and apply methods/////////////
+/*
 const lufthansa = {
     airline: 'Lufthansa',
     iatacode: 'LH',
@@ -31,6 +46,8 @@ const book = lufthansa.book;
  * and so when used call method on a function 'book' we can pass a parameter 
  * which can be considered as the object to be used as the current object.
  */
+
+/*
 book.call(eurowings,23,'Raja Ramasa');
 book.call(lufthansa,45,'Ramasam Raja');
 
@@ -90,7 +107,7 @@ const addTaxRate = function(rate){
 const addVAT2 = addTaxRate(.23);
 console.log(addVAT2(100));
 console.log(addVAT2(23));
-
+*/
 
 ///////////////////////Default Parameters/////////////
 /*
