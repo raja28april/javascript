@@ -11,16 +11,18 @@ And now explain to YOURSELF (or someone around you) WHY this worked! Take all th
 
 GOOD LUCK 😀
 */
-/*
+
 (function () {
   const header = document.querySelector('h1');
   header.style.color = 'red';
-
+//below call back function gettting access to the header variable because of the closure concept
+//Function remembers all the variables present in its birth place or in other words the function has access to varaible environment of the execution scope in which it is created/born
+//Analogy: header is in the backpack of the call back function 😉
   document.querySelector('body').addEventListener('click', function () {
     header.style.color = 'blue';
   });
 })();
-*/
+
 
 /////////////////Closures////////////////
 /*
