@@ -1,7 +1,62 @@
 'use strict';
 
-/////////////////Immediately Invoked Function Expression////////////
+/////////////////Closures////////////////
 
+const secureBooking = function () {
+    let passengerCount = 0;
+    return function () {
+        passengerCount++;
+        console.log(`${passengerCount} passengers`);
+    };
+};
+
+const booking = secureBooking();
+booking();
+booking();
+booking();
+
+console.dir(booking);
+//Example 1
+let f;
+const g = function () {
+    const a = 23;
+    f = function () {
+        console.log(a * 23);
+    }
+}
+g();
+f();
+console.dir(f);
+//re-assigning value of f
+const h = function(){
+    const b = 777;
+    f = function(){
+        console.log(b*2);
+    }
+}
+h();
+f();
+console.dir(f);
+
+
+//Example 2
+const boardingPassengers = function(n,wait){
+    const perGroup = n/3;
+    setTimeout(function(){
+        console.log(`We are now boarding all ${n} passengers`);
+        console.log(`There are 3 groups each with ${perGroup} passengers`);
+    },wait*1000);
+    console.log(`Will start boarding in ${wait} seconds`);
+};
+//scope is given to closures only and hence the below perGroup value is NOT taken
+const perGroup = 100;
+boardingPassengers(180,3);
+
+
+
+
+/////////////////Immediately Invoked Function Expression////////////
+/*
 const runOnce = function(){
     console.log('This will run never again');
 }
@@ -12,7 +67,7 @@ runOnce();
 })();
 
 (()=>console.log('This will run never again -arrow func example'))();
-
+*/
 /////////////Call and apply methods/////////////
 /*
 const lufthansa = {
@@ -43,7 +98,7 @@ const book = lufthansa.book;
 /**
  * "Call Method"
  * this keyword in lufthansa object when called in previous line points to const book initialized in above line
- * and so when used call method on a function 'book' we can pass a parameter 
+ * and so when used call method on a function 'book' we can pass a parameter
  * which can be considered as the object to be used as the current object.
  */
 
