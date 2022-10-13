@@ -118,6 +118,7 @@ console.log('Raja'.at(-1));
 */
 
 //////Looping arrays: forEach////////
+/*
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 for (const movement of movements) {
@@ -144,4 +145,22 @@ movements.forEach((mov, i, array) => {
   } else {
     console.log(`Movement ${i + 1}: you withdrew ${Math.abs(mov)}`);
   }
+})
+*/
+///////////////////////////////////////
+// forEach With Maps and Sets
+// Map
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+currencies.forEach((value,key,map)=>{
+  console.log(`${key}: ${value}`);
+});
+// Set
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+currenciesUnique.forEach((value,key,map)=>{
+  console.log(`${key}:${value}`);
 })
