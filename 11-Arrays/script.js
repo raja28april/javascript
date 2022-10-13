@@ -64,7 +64,7 @@ const accounts = [account1, account2, account3, account4];
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
-
+/*
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
@@ -100,3 +100,48 @@ console.log([...arr,...arr2]);
 ///JOIN//////
 
 console.log(letter.join('_'));
+*/
+///////////at method////////
+/*
+const arr = [23,11,64];
+console.log(arr[0]);
+console.log(arr.at(0));
+
+//getting last element of the array
+console.log(arr[arr.length-1]);
+console.log(arr.slice(-1)[0]);
+console.log(arr.at(-1));
+console.log(arr.at(-2));
+
+console.log('Raja'.at(0));
+console.log('Raja'.at(-1));
+*/
+
+//////Looping arrays: forEach////////
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+for (const movement of movements) {
+  if (movement > 0) {
+    console.log(`you deposited ${movement}`);
+  } else {
+    console.log(`you withdrew ${Math.abs(movement)}`);
+  }
+}
+console.log('---------with entries------');
+
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: you deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: you withdrew ${Math.abs(movement)}`);
+  }
+}
+// In forEach we cant break in between whereas in for loop we can break in between the loop/
+console.log('-------FOR EACH-------');
+movements.forEach((mov, i, array) => {
+  if (mov > 0) {
+    console.log(`Movement ${i + 1}: you deposited ${mov}`);
+  } else {
+    console.log(`Movement ${i + 1}: you withdrew ${Math.abs(mov)}`);
+  }
+})
