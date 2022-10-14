@@ -61,7 +61,7 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-/*const displayMovements = function (movements) {
+const displayMovements = function (movements) {
   containerMovements.innerHTML ='';
   movements.forEach((mov, i) => {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
@@ -76,9 +76,16 @@ const inputClosePin = document.querySelector('.form__input--pin');
   });
 };
 
-displayMovements(account1.movements);*/
-const eurToUsd = 1.1;
+displayMovements(account1.movements);
 
+const user  = 'Steven Thomas Williams';
+const createUserNames = function(accs){
+  accs.forEach((acc)=>{
+    acc.userName = acc.owner.toLowerCase().split(' ').map(name=>name[0]).join('');
+  });
+}
+createUserNames(accounts);
+console.log(accounts);
 ///////////////////////////////////////
 // Coding Challenge #1
 
@@ -227,6 +234,9 @@ currenciesUnique.forEach((value,key,map)=>{
 // const movementsUSD = movements.map(function(mov){
 //   return mov*eurToUsd;
 // });
+//////////////Array.Map method/////////////
+/*
+const eurToUsd = 1.1;
 const movementsUSD = movements.map(mov=>mov*eurToUsd);
 console.log(movements);
 console.log(movementsUSD);
@@ -240,3 +250,4 @@ const movementDescriptions = movements.map((mov,i,arr)=>
 )
 // const movementDescriptions = movements.map((mov,i,arr)=>`Movement ${i+1}: You ${mov>0?deposited:withdrew} ${Math.abs(mov)}`);
 console.log(movementDescriptions);
+*/
