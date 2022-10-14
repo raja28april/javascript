@@ -78,6 +78,13 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+const calcDisplayBalance = function(movements){
+  const balance = movements.reduce((acc,mov)=> acc+mov,0);
+  labelBalance.textContent = `${balance} EUR`
+};
+
+calcDisplayBalance(account1.movements);
+
 const user = 'Steven Thomas Williams';
 const createUserNames = function (accs) {
   accs.forEach((acc) => {
@@ -85,7 +92,9 @@ const createUserNames = function (accs) {
   });
 }
 createUserNames(accounts);
-console.log(accounts);
+
+
+
 ///////////////////////////////////////
 // Coding Challenge #1
 
@@ -234,7 +243,7 @@ currenciesUnique.forEach((value,key,map)=>{
 // const movementsUSD = movements.map(function(mov){
 //   return mov*eurToUsd;
 // });
-//////////////Array Map method/////////////
+//////////////Array Map method - data transaformation methods////////////
 /*
 const eurToUsd = 1.1;
 const movementsUSD = movements.map(mov=>mov*eurToUsd);
@@ -252,7 +261,8 @@ const movementDescriptions = movements.map((mov,i,arr)=>
 console.log(movementDescriptions);
 */
 
-////////////Array Filter method////////////
+////////////Array Filter method - data transaformation methods////////////
+/*
 const deposit = movements.filter((mov) => {
   return mov > 0;
 });
@@ -266,3 +276,25 @@ console.log(depositFor);
 
 const withdrawal = movements.filter((mov)=>mov<0);
 console.log(withdrawal);
+*/
+//////////////Array Reduce method - data transaformation////////////
+
+console.log(movements);
+// the first parameter is the accumulator - like snow ball
+const balance = movements.reduce((acc, curr, i, arr)=> acc + curr,0);
+console.log(balance);
+
+let balance2 = 0;
+for(const mov of movements) balance2 +=0;
+console.log(balance2); 
+
+////////Maximum Value/////////
+const max = movements.reduce((acc,mov)=> {
+  if(acc>mov){
+    return acc;
+  }else{
+    return mov;
+  }
+},movements[0]);
+console.log(max);
+
