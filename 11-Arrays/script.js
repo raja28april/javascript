@@ -61,7 +61,7 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-const displayMovements = function (movements) {
+/*const displayMovements = function (movements) {
   containerMovements.innerHTML ='';
   movements.forEach((mov, i) => {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
@@ -76,7 +76,8 @@ const displayMovements = function (movements) {
   });
 };
 
-displayMovements(account1.movements);
+displayMovements(account1.movements);*/
+const eurToUsd = 1.1;
 
 ///////////////////////////////////////
 // Coding Challenge #1
@@ -98,7 +99,7 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
 */
-const JuliaData = [3, 5, 2, 12, 7], KateData = [4, 1, 15, 8, 3];
+/*const JuliaData = [3, 5, 2, 12, 7], KateData = [4, 1, 15, 8, 3];
 const JuliaData2 = [9, 16, 6, 8, 3], KateData2 = [10, 5, 6, 1, 4];
 
 const checkDogs = function(dogsJulia, dogsKate){
@@ -115,12 +116,12 @@ const checkDogs = function(dogsJulia, dogsKate){
   })
 };
 checkDogs(JuliaData,KateData);
-checkDogs(JuliaData2,KateData2);
+checkDogs(JuliaData2,KateData2);*/
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
-/*
+
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
@@ -128,7 +129,7 @@ const currencies = new Map([
 ]);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
+/*
 /////////////////////////////////////////////////
 let arr = ['a','b','c','d','e'];
 console.log(arr.slice(2));
@@ -222,3 +223,20 @@ currenciesUnique.forEach((value,key,map)=>{
   console.log(`${key}:${value}`);
 });
 */
+
+// const movementsUSD = movements.map(function(mov){
+//   return mov*eurToUsd;
+// });
+const movementsUSD = movements.map(mov=>mov*eurToUsd);
+console.log(movements);
+console.log(movementsUSD);
+
+const movementsUSDFor = [];
+for(const mov of movements)movementsUSDFor.push(mov*eurToUsd);
+console.log(movementsUSDFor);
+
+const movementDescriptions = movements.map((mov,i,arr)=>
+    `Movement ${i+1}: You ${mov>0?'deposited':'withdrew'} ${Math.abs(mov)}`
+)
+// const movementDescriptions = movements.map((mov,i,arr)=>`Movement ${i+1}: You ${mov>0?deposited:withdrew} ${Math.abs(mov)}`);
+console.log(movementDescriptions);
