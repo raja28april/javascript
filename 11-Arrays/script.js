@@ -61,9 +61,11 @@ const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
 
-const displayMovements = function (movements) {
+const displayMovements = function (movements,sort = false) {
   containerMovements.innerHTML = "";
-  movements.forEach((mov, i) => {
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach((mov, i) => {
     const type = mov > 0 ? "deposit" : "withdrawal";
     const html = `
     <div class="movements__row">
@@ -217,6 +219,14 @@ btnLoan.addEventListener("click", function (e) {
   }
   inputLoanAmount.value = "";
 });
+
+let sorted = false;
+
+btnSort.addEventListener('click',function(e){
+  e.preventDefault();
+  displayMovements(currentAccount.movements,!sorted);
+  sorted = !sorted;
+})
 
 ///////////////Lectures////////////////////////
 // Coding Challenge #1
@@ -524,7 +534,7 @@ console.log(movements.filter(deposit));
 */
 
 //////////////////Flat////////
-const arr = [[1, 2, 3], [4, 5, 8], 6, 7];
+/*const arr = [[1, 2, 3], [4, 5, 8], 6, 7];
 console.log(arr.flat());
 
 const arrDeep = [[[1, 2], 3], [[[4], 5], 6], 7, 8];
@@ -544,3 +554,40 @@ const overalBalance = accounts
 const overalBalance1 = accounts
   .flatMap((acc) => acc.movements)
   .reduce((acc, mov) => acc + mov, 0);
+*/
+
+////////////////////////Sorting Arrays///////////////
+
+//Strings Sort method
+const owners = ['Raja','Zach','Adam','Martha'];
+console.log(owners.sort());
+console.log(owners);
+
+
+//Numbers Sort method
+
+console.log(movements);
+console.log(movements.sort());//[-130, -400, -650, 1300, 200, 3000, 450, 70]
+//sort method on strings gives incorrect results as they consider numbers also a sstrings
+
+//to fix this we have to pass a compare callback function as shown below
+
+// return < 0, then A will be before B (keep order)
+//return > 0, then B will be before A (switch order)
+//Ascending
+movements.sort((a, b) => {
+  if (a > b) return 1;
+  if (a < b) return -1;
+});
+console.log(movements);
+
+//Descending
+movements.sort((a, b) => {
+  if (a > b) return -1;
+  if (a < b) return 1;
+});
+
+console.log(movements);
+
+movements.sort((a,b)=>a-b);//a-b if returns 1 , then keep order as mentioned above else switch order
+movements.sort((a,b)=>b-a);
