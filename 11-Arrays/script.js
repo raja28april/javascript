@@ -61,7 +61,7 @@ const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
 
-const displayMovements = function (movements,sort = false) {
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = "";
   const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
 
@@ -222,11 +222,11 @@ btnLoan.addEventListener("click", function (e) {
 
 let sorted = false;
 
-btnSort.addEventListener('click',function(e){
+btnSort.addEventListener("click", function (e) {
   e.preventDefault();
-  displayMovements(currentAccount.movements,!sorted);
+  displayMovements(currentAccount.movements, !sorted);
   sorted = !sorted;
-})
+});
 
 ///////////////Lectures////////////////////////
 // Coding Challenge #1
@@ -557,7 +557,7 @@ const overalBalance1 = accounts
 */
 
 ////////////////////////Sorting Arrays///////////////
-
+/*
 //Strings Sort method
 const owners = ['Raja','Zach','Adam','Martha'];
 console.log(owners.sort());
@@ -591,3 +591,42 @@ console.log(movements);
 
 movements.sort((a,b)=>a-b);//a-b if returns 1 , then keep order as mentioned above else switch order
 movements.sort((a,b)=>b-a);
+
+*/
+
+//////////////////Creating and filling Arrays///////////
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+//Empty arrays + filling methods
+
+const x = new Array(7);
+console.log(x);
+// console.log(x.map(()=>5));
+
+x.fill(1, 3, 5);
+// x.fill(1);
+console.log(x);
+
+x.fill(23, 2, 6);
+console.log(x);
+
+////////Array.from()/////////////
+// Note: - using method on Array constructor
+
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z);
+
+labelBalance.addEventListener("click", function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll(".movements__value"),
+    (el) => Number(el.textContent.replace("€", ""))//2nd argument is like action to perform the new array created
+  );
+  console.log(movementsUI);
+
+  const movementsUI2 = [...document.querySelectorAll(".movements__value")];
+});
