@@ -595,7 +595,7 @@ movements.sort((a,b)=>b-a);
 */
 
 //////////////////Creating and filling Arrays///////////
-
+/*
 const arr = [1, 2, 3, 4, 5, 6, 7];
 console.log(new Array(1, 2, 3, 4, 5, 6, 7));
 
@@ -630,3 +630,4 @@ labelBalance.addEventListener("click", function () {
 
   const movementsUI2 = [...document.querySelectorAll(".movements__value")];
 });
+*/
