@@ -208,14 +208,14 @@ btnLoan.addEventListener("click", function (e) {
   if (
     amount > 0 &&
     currentAccount.movements.some((mov) => mov >= amount * 0.1)
-  ){
-    //Add movement 
+  ) {
+    //Add movement
     currentAccount.movements.push(amount);
 
     //update UI
     updateUI(currentAccount);
   }
-  inputLoanAmount.value = '';
+  inputLoanAmount.value = "";
 });
 
 ///////////////Lectures////////////////////////
@@ -504,7 +504,7 @@ const account = accounts.find(acc=>acc.owner==='Raja Ramasamy');
 console.log(account);
 */
 
-console.log(movements);
+/*console.log(movements);
 //EQUALITY
 console.log(movements.includes(-130));
 
@@ -521,3 +521,26 @@ const deposit = mov => mov >0;
 console.log(movements.some(deposit));
 console.log(movements.every(deposit));
 console.log(movements.filter(deposit));
+*/
+
+//////////////////Flat////////
+const arr = [[1, 2, 3], [4, 5, 8], 6, 7];
+console.log(arr.flat());
+
+const arrDeep = [[[1, 2], 3], [[[4], 5], 6], 7, 8];
+console.log(arrDeep.flat(2));
+
+// const accountMovements = accounts.map(acc=>acc.movements);
+
+// const allMovements = accountMovements.flat();
+
+// const overalBalance = allMovements.reduce((acc,mov)=>acc+mov,0);
+
+const overalBalance = accounts
+  .map((acc) => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+
+const overalBalance1 = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
