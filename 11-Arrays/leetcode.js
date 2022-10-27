@@ -20,6 +20,7 @@ Example 1: Return true if a given string is a palindrome, false otherwise.
 A string is a palindrome if it reads the same forwards as backwards. That means, after reversing it, it is still the same string. For example: "abcdcba", or "racecar".
 
 */
+/*
 const checkIfPalindrome = function (s) {
     let left = 0;
     let right = s.length - 1;
@@ -36,13 +37,15 @@ const checkIfPalindrome = function (s) {
     return true;
 }
 console.log(checkIfPalindrome('raar'));
-
+*/
 /*Example 2: Given a sorted array of unique integers and a target integer, return true if there exists a pair of numbers that sum to target, false otherwise. This problem is similar to Two Sum.
 
 For example, given nums = [1, 2, 4, 6, 8, 9, 14, 15] and target = 13, return true because 4 + 9 = 13.
 
 The complexity of below solution is O(n).
 */
+
+/*
 const checkForTarget = function (nums, target) {
     let left = 0;
     let right = nums.length - 1;
@@ -66,6 +69,9 @@ const checkForTarget = function (nums, target) {
 const nums = [1, 2, 4, 6, 8, 9, 14, 15];
 const target = 13;
 console.log(checkForTarget(nums, target));
+*/
+
+
 
 //Another approach for example 2
 /*This method where we start the pointers at the first and last indices and move them towards each other is only one way to implement two pointers. Algorithms are beautiful because of how abstract they are - two-pointers can be implemented in many ways. Let's look at another method. The following method is applicable when the problem has two iterables in the input, for example, two arrays.
@@ -77,7 +83,7 @@ Because our while loop will stop when one of the pointers reaches the end, the o
 */
 
 //Example 3: Given two sorted integer arrays, return an array that combines both of them and is also sorted.
-
+/*
 const arrCom = [];
 const combine = function (arr1, arr2) {
     let fir = 0, sec = 0;
@@ -108,7 +114,7 @@ const arr2 = [2, 3, 4];
 combine(arr1, arr2);
 console.log(arrCom);
 
-
+*/
 /*
 Example 4: 392. Is Subsequence.
 
@@ -116,7 +122,7 @@ Given two strings s and t, return true if s is a subsequence of t, or false othe
 
 A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
 */
-
+/*
 const subsequence = function (s, t) {
     let i = 0, j = 0;
     while (i < s.length && j < t.length) {
@@ -129,3 +135,43 @@ const subsequence = function (s, t) {
 }
 const s = 'abc', t = 'abcde';
 console.log(subsequence(s, t));
+*/
+
+
+var twoSum = function (nums, target) {
+    const sortedNums = nums.slice().sort((a, b) => a - b);
+    console.log(nums);
+    console.log(sortedNums);
+    let left = 0, right = nums.length - 1;
+
+    while (left < right) {
+        let curr = sortedNums[left] + sortedNums[right];
+        if (curr === target) {
+            let l, r;
+            if (sortedNums[left] === sortedNums[right]) {
+                l = nums.indexOf(sortedNums[left]);
+                r = nums.indexOf(sortedNums[right], l + 1)
+            } else {
+                l = nums.indexOf(sortedNums[left]);
+                r = nums.indexOf(sortedNums[right])
+            }
+            if (r > l) {
+                return [l, r];
+            } else {
+                return [r, l];
+            }
+        }
+        if (curr > target) {
+            right--;
+        }
+        else {
+            left++;
+        }
+    }
+};
+
+console.log(twoSum([-1, -2, -3, -4, -5], -8));
+console.log(twoSum([3, 3], 6));
+console.log(twoSum([2, 7, 11, 15], 9));
+
+
