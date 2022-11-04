@@ -16,6 +16,6 @@ var noOfProducts = 10;
 
 # why to use strict mode and this keyword notes;
 
-1. spelling mistakes will be ignored in non strict mode
-2. 'this' keyword will point to window object in non strict mode inside normal functions
-   for arrow functions
+1. spelling mistakes will be ignored in non strict modes
+2. in normal functions this keyword points to window objects
+3. in arrow functions this points to the nearest surronding object - here it is called as lexical this
