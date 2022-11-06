@@ -20,3 +20,7 @@ var noOfProducts = 10;
 2. in normal functions this keyword points to window objects
 3. in arrow functions this points to the nearest surronding function - here it is called as lexical this
 4. this keyword in event listener points to DOM element
+
+# var data type
+
+variables created with var will be in the window object
