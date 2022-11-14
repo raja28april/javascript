@@ -210,7 +210,7 @@ const a = age >= 20;//false
 const b = age < 30;//true
 
 console.log(!a);//true
-console.log(a && b);//false
+console.log(a &b);//false
 console.log(a || b);//true
 console.log(!a && b);//true
 console.log(a || !b);//false
@@ -269,5 +269,5 @@ console.log(`I'm ${2022-1991} years young ${me}`);
 */
 //Ternary operator
 const age = 21;
-const drink = age>=18?'wine 🍷':'water 💧';
+const drink = age >= 18 ? 'wine 🍷' : 'water 💧';
 console.log(drink);
